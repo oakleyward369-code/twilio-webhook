@@ -18,8 +18,9 @@ app.post("/webhook", async (req, res) => {
 
         await client.calls.create({
             twiml: `<Response><Say>${signal}</Say></Response>`,
-            to: process.env.YOUR_PHONE_NUMBER,
-            from: process.env.TWILIO_PHONE_NUMBER
+            to: process.env.TWILIO_TO_NUMBER,
+            from: process.env.TWILIO_FROM_NUMBER
+
         });
 
         console.log("Call initiated");
